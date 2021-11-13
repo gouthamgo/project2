@@ -11,6 +11,7 @@ export class App extends Component {
                     <Switch>
 
                         <Route exact path='/' component={Home} />
+                        {/* Home componentgonna be rendered for the user interaction */} 
 
                     </Switch>
                 </BrowserRouter>

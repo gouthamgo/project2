@@ -1,13 +1,8 @@
 import React from 'react'
 
+export const Navbar = () => {
 
-
-
-
-export const Navbar = ({ user }) => {
-
-
-    return (
+return (
         <div className='navbox'>
             Navbar
         </div>
