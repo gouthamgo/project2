@@ -17,3 +17,9 @@ body{
     background: #ffffff;
     color: #1e1e27;
 }
+
+.error-msg{
+
+  font-size: 12px;
+  font-weight: 600;
+}
