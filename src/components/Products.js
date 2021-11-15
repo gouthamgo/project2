@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import { ProductsContext } from '../global/ProductsContext'
+import '../css/Product.css'
+
 
 export const Products = () => {
 
@@ -20,7 +22,7 @@ export const Products = () => {
                             {product.Name}
                         </div>
                         <div className='product-price'>
-                            Rs {product.Price}.00
+                            $ {product.Price}.00
                     </div>
                         <button className='addcart-btn' >ADD TO CART</button>
                     </div>

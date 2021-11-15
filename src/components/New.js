@@ -15,7 +15,7 @@ return (
   						<div class="col-md-4">
   							<div class="banner_item item1 align-item-center" >
   								<div class="banner_category">
-                  <Link to='Women' className='women'>Womens</Link>
+                  <Link to='Products' className='women'>Womens</Link>
   								</div>
   							</div>
   						</div>

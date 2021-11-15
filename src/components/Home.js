@@ -67,7 +67,6 @@ return (
 
   <New/>
 
-  <Products/>
 
 </>
 

@@ -5,6 +5,7 @@ import {AddProducts} from './components/AddProducts'
 import { Signup } from './components/Signup';
 import { Login } from './components/Login';
 import {Women} from './components/Women'
+import {Products} from './components/Products'
 
 import { ProductsContextProvider } from './global/ProductsContext'
 
@@ -25,6 +26,7 @@ export class App extends Component {
               <Route path='/login' component={Login} />
 
               <Route path='/Women' component={Women} />
+              <Route path='/Products' component={Products} />
 
 
 
