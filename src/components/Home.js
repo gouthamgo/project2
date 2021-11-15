@@ -8,6 +8,8 @@ import {Link} from 'react-router-dom'
 
 import {New} from './New';
 
+import {Products} from './Products'
+
 
 export const Home = () => {
 
@@ -64,6 +66,7 @@ return (
 
 
   <New/>
+
 
 </>
 
