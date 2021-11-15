@@ -7,6 +7,7 @@ import { Login } from './components/Login';
 import {Women} from './components/Women'
 import {Products} from './components/Products'
 
+
 import { ProductsContextProvider } from './global/ProductsContext'
 
 export class App extends Component {
@@ -16,6 +17,7 @@ export class App extends Component {
         <div>
           <BrowserRouter>
             <Switch>
+
 
               <Route exact path='/' component={Home} />
               {/* Home componentgonna be rendered for the user interaction */}
