@@ -6,30 +6,34 @@ import { Signup } from './components/Signup';
 import { Login } from './components/Login';
 import {Women} from './components/Women'
 
+import { ProductsContextProvider } from './global/ProductsContext'
 
 export class App extends Component {
   render(){
     return(
-      <div>
-        <BrowserRouter>
-          <Switch>
+      <ProductsContextProvider>
+        <div>
+          <BrowserRouter>
+            <Switch>
 
-            <Route exact path='/' component={Home} />
-            {/* Home componentgonna be rendered for the user interaction */}
+              <Route exact path='/' component={Home} />
+              {/* Home componentgonna be rendered for the user interaction */}
 
-            <Route exact path='/addproducts' component={AddProducts} />
+              <Route exact path='/addproducts' component={AddProducts} />
 
-            <Route path='/signup' component={Signup} />
-            <Route path='/login' component={Login} />
+              <Route path='/signup' component={Signup} />
+              <Route path='/login' component={Login} />
 
-            <Route path='/Women' component={Women} />
-
-
+              <Route path='/Women' component={Women} />
 
 
-                    </Switch>
-                </BrowserRouter>
-      </div>
+
+
+            </Switch>
+          </BrowserRouter>
+        </div>
+
+      </ProductsContextProvider>
     )
   }
 }
