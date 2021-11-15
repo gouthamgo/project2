@@ -3,6 +3,8 @@ import { ProductsContext } from '../global/ProductsContext'
 
 
 
+
+
 export const ProductShow = () => {
 
     const { products } = useContext(ProductsContext);
