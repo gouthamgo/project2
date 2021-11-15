@@ -7,10 +7,6 @@ import { Login } from './components/Login';
 import { Women } from './components/Women';
 import { auth, db } from './config/Config';
 import {Products} from './components/Products'
-
-
-
-
 import { ProductsContextProvider } from './global/ProductsContext'
 
 
@@ -22,7 +18,7 @@ export class App extends Component {
 
   componentDidMount() {
     auth.onAuthStateChanged(user => {
-      if (user) {
+      if(user) {
         db.collection('Users').doc(user.uid).get().then(snapshot => {
           this.setState({
             user: snapshot.data().Name

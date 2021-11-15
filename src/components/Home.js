@@ -8,10 +8,15 @@ import {Products} from './Products'
 
 
 
-export const Home = () => {
+export const Home = ({ user }) => {
 
   return (
+
     <>
+    <div className='wrapper'>
+      <Navbar user={ user }/>
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="/">Wear<span> This</span></a>
 
