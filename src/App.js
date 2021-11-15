@@ -6,6 +6,7 @@ import { Signup } from './components/Signup';
 import { Login } from './components/Login';
 import { Women } from './components/Women';
 import { auth, db } from './config/Config';
+import {Products} from './components/Products'
 
 
 
@@ -45,24 +46,26 @@ export class App extends Component {
 
 
               <Route exact path='/' component={Home} />
-              
-
-              <Route exact path='/' component={() => <Home user={this.state.user}/>
-            {/* Home componentgonna be rendered for the user interaction */}
-
-            <Route exact path='/addproducts' component={AddProducts} />
-
-            <Route path='/signup' component={Signup} />
-            <Route path='/login' component={Login} />
-
-            <Route path='/Women' component={Women} />
 
 
 
 
-                    </Switch>
+              <Route exact path='/addproducts' component={AddProducts} />
+
+              <Route path='/signup' component={Signup} />
+              <Route path='/login' component={Login} />
+
+              <Route path='/Women' component={Women} />
+
+              <Route path='/Products' component={Products} />
+
+
+
+
+                </Switch>
                 </BrowserRouter>
-      </div>
+                </div>
+                </ProductsContextProvider>
     )
   }
 }
