@@ -15,7 +15,7 @@ export class ProductsContextProvider extends React.Component {
     componentDidMount() {
 
         const prevProducts = this.state.products;
-        {/* make a copy of the Initial state  */}
+      
         db.collection('Products').onSnapshot(snapshot => {
             let changes = snapshot.docChanges();
             changes.forEach(change => {

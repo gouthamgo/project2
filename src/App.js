@@ -38,7 +38,7 @@ export class App extends Component {
         <BrowserRouter>
           <Switch>
 
-              <Route exact path='/' component={() => <Home user={this.state.user}/> 
+              <Route exact path='/' component={() => <Home user={this.state.user}/> } />
             {/* Home componentgonna be rendered for the user interaction */}
 
             <Route exact path='/addproducts' component={AddProducts} />
