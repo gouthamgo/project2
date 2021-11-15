@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {auth} from '../config/Config';
+import {auth } from '../config/Config';
 import {Link} from 'react-router-dom'
 
 export const Login = (props) => {
@@ -10,12 +10,14 @@ export const Login = (props) => {
 
   const login =  (e)=>{
       e.preventDefault();
+      console.log(email, password);
       auth.signInWithEmailAndPassword(email,password).then(()=>{
           setEmail('');
           setPassword('');
           setError('');
           props.history.push('/');
-      }).catch(err => setError(err.message));
+      }).catch(err =>
+        console.log(err.message));
   }
 
 

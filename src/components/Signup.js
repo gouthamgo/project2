@@ -13,11 +13,12 @@ export const Signup = (props) => {
     const [error, setError] = useState('');
 
 
-  const Signup = (e) => {
+  const doSignup = (e) => {
     e.preventDefault();
-    console.log("form submitted");
-    console.log(name, email, password);
+     console.log("form submitted");
+    // console.log(name, email, password);
     auth.createUserWithEmailAndPassword(email,password).then((cred)=>{
+      console.log("jnkcx");
         db.collection('Users').doc(cred.user.uid).set({
           Name: name,
           Email: email,
@@ -41,7 +42,7 @@ export const Signup = (props) => {
           <h2> Sign Up </h2>
           <br/>
 
-          <form autoComplete="off" className="form-group" onSubmit={Signup}>
+          <form autoComplete="off" className="form-group" onSubmit={doSignup}>
               <label htmlFor="Name">Name</label>
               <br/>
               <input type="text" className='form-control' required
