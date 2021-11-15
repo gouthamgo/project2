@@ -1,32 +1,43 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Icon } from 'react-icons-kit'
-import { cart } from 'react-icons-kit/entypo/cart'
-import { useHistory } from 'react-router-dom'
-import { auth } from '../config/Config'
 
-export const Navbar = ({user}) => {
-
-  const history = useHistory();
-
-  const logout = () => {
-    auth.signOut().then(()=>{
-      history.push('/login');
-    })
-  }
-  return (
+export const Navbar = () => {
 
 
-      {!user && <div className='navbox'>
-        <Link to='signup' className='nav-link'>Signup</Link>
-        <Link to='login' className='nav-link'>Login</Link>
-      </div> }
+return (
+  <>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Wear<span> This</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav" >
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item active">
+            <Link to= '/' className="nav-link"> Home</Link>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#ban">New</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
 
-      {user && <div className='navbox'>
-        <span><Link to='/' className='navlinks'>{user}</Link></span>
-        <span><Link to='cartproducts' className='navlinks'><Icon icon={cart} /> </Link></span>
-        <span><button clasName='logout-btn' onClick={logout}>LOGOUT</button></span>
+          <li class="nav-item">
+            <Link to= '/signup' className="nav-link"> Signup</Link>
+          </li>
+
+          <li class="nav-item">
+            <Link to= '/login' className="nav-link"> Login</Link>
+          </li>
+
+        </ul>
       </div>
-  
-  )
+    </nav>
+
+  </>
+    )
 }

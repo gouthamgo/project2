@@ -15,10 +15,7 @@ export const Signup = (props) => {
 
   const doSignup = (e) => {
     e.preventDefault();
-     console.log("form submitted");
-    // console.log(name, email, password);
     auth.createUserWithEmailAndPassword(email,password).then((cred)=>{
-      console.log("jnkcx");
         db.collection('Users').doc(cred.user.uid).set({
           Name: name,
           Email: email,
