@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom'
 
 export const Signup = (props) => {
 
-    // Defiming state using useState hook
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
