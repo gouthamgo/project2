@@ -7,6 +7,14 @@ import { Login } from './components/Login';
 import { Women } from './components/Women';
 import { auth, db } from './config/Config';
 import {Products} from './components/Products'
+<<<<<<< HEAD
+=======
+import {ProductShow} from './components/ProductShow'
+
+
+
+
+>>>>>>> becc894388c02b1b5a965ebe63c94d52733979c2
 import { ProductsContextProvider } from './global/ProductsContext'
 
 
@@ -45,10 +53,23 @@ export class App extends Component {
               <Route path='/login' component={Login} />
               <Route path='/Women' component={Women} />
               <Route path='/Products' component={Products} />
+<<<<<<< HEAD
             </Switch>
           </BrowserRouter>
         </div>
       </ProductsContextProvider>
+=======
+
+              <Route path='/ProductShow' component={ProductShow} />
+              
+
+
+
+                </Switch>
+                </BrowserRouter>
+                </div>
+                </ProductsContextProvider>
+>>>>>>> becc894388c02b1b5a965ebe63c94d52733979c2
     )
   }
 }
