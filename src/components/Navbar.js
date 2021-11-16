@@ -1,7 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Icon } from 'react-icons-kit'
+import { cart } from 'react-icons-kit/entypo/cart'
+import { useHistory } from 'react-router-dom'
 
-export const Navbar = () => {
+import { auth } from '../config/Config'
+
+export const Navbar = ({user}) => {
+
+  const history = useHistory();
+
+
+    // handle logout
+    const handleLogout = () => {
+        auth.signOut().then(() => {
+            history.push('/login');
+        })
+    }
 
 
 return (
@@ -25,7 +40,7 @@ return (
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
           </li>
-
+       {!user && <div className='rightside'>
           <li class="nav-item">
             <Link to= '/signup' className="nav-link"> Signup</Link>
           </li>
@@ -33,8 +48,16 @@ return (
           <li class="nav-item">
             <Link to= '/login' className="nav-link"> Login</Link>
           </li>
+        </div>}
+        {user && <div className='rightside'>
+                        <span><Link to="/" className='navlink'>{user}</Link></span>
+                        <span><Link to="cartproducts" className='navlink'><Icon icon={cart} /></Link></span>
+                        <span><button className='logout-btn' onClick={handleLogout}>Logout</button></span>
+                    </div>}
 
         </ul>
+
+
       </div>
     </nav>
 

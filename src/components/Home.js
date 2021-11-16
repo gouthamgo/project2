@@ -12,12 +12,12 @@ import {Products} from './Products'
 
 
 
-export const Home = () => {
+export const Home = ({user}) => {
 
 return (
 <>
   <div>
-    <Navbar/>
+    <Navbar user={user}/>
   </div>
 
 

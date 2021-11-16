@@ -2,11 +2,13 @@ import React, { useContext } from 'react'
 import { ProductsContext } from '../global/ProductsContext'
 import '../css/Product.css'
 import {Link} from 'react-router-dom'
+import { Navbar } from './Navbar';
 
 
 
 
-export const Products = () => {
+
+export const Products = ({user}) => {
 
     const { products } = useContext(ProductsContext);
 
@@ -14,6 +16,9 @@ export const Products = () => {
     return (
         <>
 
+        <div>
+          <Navbar user={user}/>
+        </div>
 
             {products.length !== 0 && <h1>Products</h1>}
             <div className='products-container'>
