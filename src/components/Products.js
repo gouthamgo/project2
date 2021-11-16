@@ -3,6 +3,8 @@ import { ProductsContext } from '../global/ProductsContext'
 import '../css/Product.css'
 import {Link} from 'react-router-dom'
 import { Navbar } from './Navbar';
+import { CartContext } from '../global/CartContext'
+
 
 
 
@@ -10,7 +12,9 @@ import { Navbar } from './Navbar';
 
 export const Products = ({user}) => {
 
-    const { products } = useContext(ProductsContext);
+  const { products } = useContext(ProductsContext);
+
+  const { dispatch } = useContext(CartContext);
 
 
     return (
@@ -37,7 +41,7 @@ export const Products = ({user}) => {
                         <div className='product-price'>
                             $ {product.Price}.00
                     </div>
-                        <button className='addcart-btn' >ADD TO CART</button>
+                    <button className='addcart-btn' onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.ProductID, product })}>ADD TO CART</button>
                     </div>
                 ))}
             </div>

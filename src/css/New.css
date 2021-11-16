@@ -1,8 +1,8 @@
-/* 4.banner */
+/* banner */
 .banner{
     width: 100%;
-    margin-top: 30px;
-    padding: 20px;
+    margin-top: 20px;
+    padding: 5px;
 }
 
 .banner_item{

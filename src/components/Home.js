@@ -8,7 +8,13 @@ import {Link} from 'react-router-dom'
 
 import {New} from './New';
 
-import {Products} from './Products'
+import {Products} from './Products';
+
+import {Flash} from './Flash';
+
+import {Footer} from './Footer';
+
+
 
 
 
@@ -40,6 +46,11 @@ return (
 
   <New/>
 
+
+<Flash/>
+
+
+<Footer/>
 
 </>
 

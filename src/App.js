@@ -10,6 +10,8 @@ import {Products} from './components/Products'
 
 
 import {ProductShow} from './components/ProductShow'
+import { CartContextProvider } from './global/CartContext'
+
 
 
 
@@ -44,6 +46,7 @@ export class App extends Component {
   render(){
     return(
       <ProductsContextProvider>
+      <CartContextProvider>
         <div>
           <BrowserRouter>
             <Switch>
@@ -55,13 +58,14 @@ export class App extends Component {
               <Route path='/Products' component={Products} />
 
               <Route path='/ProductShow' component={ProductShow} />
-              
+
 
 
 
                 </Switch>
                 </BrowserRouter>
                 </div>
+                </CartContextProvider>
                 </ProductsContextProvider>
     )
   }
