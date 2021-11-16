@@ -1,15 +1,10 @@
 import React from 'react'
 import { Navbar } from './Navbar';
-
 import '../css/Home.css'
 import '../images/s1.jpg'
-
 import {Link} from 'react-router-dom'
-
 import {New} from './New';
-
 import {Products} from './Products'
-
 
 
 export const Home = ({user}) => {
@@ -33,15 +28,11 @@ return (
 				</div>
 			</div>
 		</div>
-
 	</div>
-
-
 
   <New/>
 
-
 </>
 
-    )
+  )
 }

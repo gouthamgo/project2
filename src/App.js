@@ -7,16 +7,9 @@ import { Login } from './components/Login';
 import { Women } from './components/Women';
 import { auth, db } from './config/Config';
 import {Products} from './components/Products'
-
-
 import {ProductShow} from './components/ProductShow'
-
-
-
-
-
 import { ProductsContextProvider } from './global/ProductsContext'
-
+import SingleProduct from './components/SingleProduct';
 
 export class App extends Component {
 
@@ -53,16 +46,12 @@ export class App extends Component {
               <Route path='/login' component={Login} />
               <Route path='/Women' component={Women} />
               <Route path='/Products' component={Products} />
-
               <Route path='/ProductShow' component={ProductShow} />
-              
-
-
-
-                </Switch>
-                </BrowserRouter>
-                </div>
-                </ProductsContextProvider>
+              <SingleProduct />
+            </Switch>
+          </BrowserRouter>
+        </div>
+      </ProductsContextProvider>
     )
   }
 }

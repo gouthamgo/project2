@@ -2,7 +2,6 @@
 import React,{createContext} from 'react';
 import {db} from '../config/Config';
 
-
 export const ProductsContext = createContext();
 
 export class ProductsContextProvider extends React.Component {
@@ -15,7 +14,7 @@ export class ProductsContextProvider extends React.Component {
     componentDidMount() {
 
         const prevProducts = this.state.products;
-      
+
         db.collection('Products').onSnapshot(snapshot => {
             let changes = snapshot.docChanges();
             changes.forEach(change => {
