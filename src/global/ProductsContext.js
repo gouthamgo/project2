@@ -3,7 +3,6 @@ import React,{createContext} from 'react';
 import {db} from '../config/Config';
 // take from the config file
 
-
 export const ProductsContext = createContext();
 //we are creating context with createContext() and putting the result in a variable ProductsContext
 

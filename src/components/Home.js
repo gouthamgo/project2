@@ -1,9 +1,7 @@
 import React from 'react'
 import { Navbar } from './Navbar';
-
 import '../css/Home.css'
 import '../images/s1.jpg'
-
 
 import {New} from './New';
 

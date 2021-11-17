@@ -20,7 +20,7 @@ import { Cashout } from './components/Cashout'
 
 
 import { ProductsContextProvider } from './global/ProductsContext'
-
+import SingleProduct from './components/SingleProduct';
 
 export class App extends Component {
 
@@ -45,9 +45,8 @@ export class App extends Component {
     })
   }
 
-  render(){
-    return(
-
+render(){
+  return(
       // we can use it in any of the components defined under
 
 <ProductsContextProvider>
@@ -55,7 +54,6 @@ export class App extends Component {
         <div>
           <BrowserRouter>
             <Switch>
-
               <Route exact path='/' component={() => <Home user={this.state.user} />} />
               <Route exact path='/addproducts' component={AddProducts} />
               <Route path='/signup' component={Signup} />
@@ -74,7 +72,7 @@ export class App extends Component {
           </CartContextProvider>
       </ProductsContextProvider>
 
-    )
+  )
   }
 }
 

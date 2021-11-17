@@ -10,7 +10,7 @@ export const Login = (props) => {
 
   const login =  (e)=>{
       e.preventDefault();
-      console.log(email, password);
+
       auth.signInWithEmailAndPassword(email,password).then(()=>{
           setEmail('');
           setPassword('');
