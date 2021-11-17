@@ -23,7 +23,8 @@ return (
   						<div class="col-md-4">
   							<div class="banner_item item2 align-item-center" >
   								<div class="banner_category">
-  									<a href="#">Accessories</a>
+                    <Link to='Products' className='women'>Accessories</Link>
+
   								</div>
   							</div>
   						</div>
@@ -31,7 +32,8 @@ return (
   						<div class="col-md-4">
   							<div class="banner_item item3 align-item-center" >
   								<div class="banner_category">
-  									<a href="#">Men's</a>
+                    <Link to='Products' className='women'>Mens</Link>
+
   								</div>
   							</div>
   						</div>
