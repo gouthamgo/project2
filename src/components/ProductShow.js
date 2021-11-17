@@ -20,28 +20,32 @@ export const ProductShow = ({user}) => {
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
+    const [data, setData] = useState('');
 
     const { products } = useContext(ProductsContext);
     const productIdUrl = useLocation().pathname.split("/").pop();
 
     const productId = productIdUrl.substring(1);
-    console.log(productId);
+    // console.log(productId);
 
         var docRef = db.collection("Products").doc(productId);
 
           docRef.get().then((doc) => {
             if (doc.exists) {
+
               const data = doc.data();
+              data.ProductID= productId
               setName(data.Name)
               setPrice(data.Price)
               setImage(data.Image)
-              console.log("Document data:", doc.data());
+              setData(data)
+              // console.log("Document data:", doc.data());
             } else {
               // doc.data() will be undefined in this case
-              console.log("No such document!");
+              // console.log("No such document!");
             }
             }).catch((error) => {
-              console.log("Error getting document:", error);
+              // console.log("Error getting document:", error);
         });
 
     return (
@@ -54,7 +58,7 @@ export const ProductShow = ({user}) => {
           <br/>
           <img src={image} />
           <br/>
-          <button className='addcart-btn' onClick={() => dispatch({ type: 'ADD_TO_CART', id:productIdUrl})}>ADD TO CART</button>
+          <button className='addcart-btn' onClick={() => dispatch({ type: 'ADD_TO_CART', id:productIdUrl, product:data})}>ADD TO CART</button>
       </div>
     )
 }

@@ -4,6 +4,8 @@ import 'react-toastify/dist/ReactToastify.css';
 toast.configure();
 
 export const CartReducer = (state, action) => {
+    console.log(state);
+    console.log(action);
 
     const { shoppingCart, totalPrice, totalQty } = state;
     // destructure the shoppingCart, totalPrice and totalQty
@@ -32,11 +34,13 @@ export const CartReducer = (state, action) => {
                 return state;
             }
             else {
+
                 product = action.product;
                 product['qty'] = 1;
                 product['TotalPrice'] = product.Price * product.qty;
                 updatedQty = totalQty + 1;
                 updatedPrice = totalPrice + product.Price;
+                console.log(product);
                 return {
                     shoppingCart: [product, ...shoppingCart], totalPrice: updatedPrice, totalQty: updatedQty
                 }
