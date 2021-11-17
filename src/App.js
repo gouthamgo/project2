@@ -20,7 +20,6 @@ import { Cashout } from './components/Cashout'
 
 
 import { ProductsContextProvider } from './global/ProductsContext'
-import SingleProduct from './components/SingleProduct';
 
 export class App extends Component {
 

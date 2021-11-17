@@ -2,7 +2,6 @@
 import React, { useContext, useState } from 'react'
 import { ProductsContext } from '../global/ProductsContext'
 import { Navbar } from './Navbar';
-import { Link } from "react-router-dom";
 import { useLocation } from "react-router"
 import {db} from '../config/Config';
 import { CartContext } from '../global/CartContext'
@@ -21,7 +20,6 @@ export const ProductShow = ({user}) => {
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
 
-    const { products } = useContext(ProductsContext);
     const productIdUrl = useLocation().pathname.split("/").pop();
 
     const productId = productIdUrl.substring(1);
@@ -52,7 +50,7 @@ export const ProductShow = ({user}) => {
           <br/>
           Price: ${ price }
           <br/>
-          <img src={image} />
+          <img src={Image} alt="not found" />
           <br/>
           <button className='addcart-btn' onClick={() => dispatch({ type: 'ADD_TO_CART', id:productIdUrl})}>ADD TO CART</button>
       </div>

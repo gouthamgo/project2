@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { ProductsContext } from '../global/ProductsContext'
 import '../css/Product.css'
 import {Link} from 'react-router-dom'
-import { Navbar } from './Navbar';
 import { CartContext } from '../global/CartContext'
 
 
