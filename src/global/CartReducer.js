@@ -6,6 +6,8 @@ toast.configure();
 export const CartReducer = (state, action) => {
 
     const { shoppingCart, totalPrice, totalQty } = state;
+    // destructure the shoppingCart, totalPrice and totalQty
+    // from state and then decalre some variables
 
     let product;
     let index;
@@ -32,9 +34,9 @@ export const CartReducer = (state, action) => {
             else {
                 product = action.product;
                 product['qty'] = 1;
-                product['TotalProductPrice'] = product.ProductPrice * product.qty;
+                product['TotalPrice'] = product.Price * product.qty;
                 updatedQty = totalQty + 1;
-                updatedPrice = totalPrice + product.ProductPrice;
+                updatedPrice = totalPrice + product.Price;
                 return {
                     shoppingCart: [product, ...shoppingCart], totalPrice: updatedPrice, totalQty: updatedQty
                 }
@@ -44,9 +46,9 @@ export const CartReducer = (state, action) => {
         case 'INC':
             product = action.cart;
             product.qty = ++product.qty;
-            product.TotalProductPrice = product.qty * product.ProductPrice;
+            product.TotalPrice = product.qty * product.Price;
             updatedQty = totalQty + 1;
-            updatedPrice = totalPrice + product.ProductPrice;
+            updatedPrice = totalPrice + product.Price;
             index = shoppingCart.findIndex(cart => cart.ProductID === action.id);
             shoppingCart[index] = product;
             return {
@@ -58,8 +60,8 @@ export const CartReducer = (state, action) => {
             product = action.cart;
             if (product.qty > 1) {
                 product.qty = product.qty - 1;
-                product.TotalProductPrice = product.qty * product.ProductPrice;
-                updatedPrice = totalPrice - product.ProductPrice;
+                product.TotalPrice = product.qty * product.Price;
+                updatedPrice = totalPrice - product.Price;
                 updatedQty = totalQty - 1;
                 index = shoppingCart.findIndex(cart => cart.ProductID === action.id);
                 shoppingCart[index] = product;
@@ -76,7 +78,7 @@ export const CartReducer = (state, action) => {
             const filtered = shoppingCart.filter(product => product.ProductID !== action.id);
             product = action.cart;
             updatedQty = totalQty - product.qty;
-            updatedPrice = totalPrice - product.qty * product.ProductPrice;
+            updatedPrice = totalPrice - product.qty * product.Price;
             return {
                 shoppingCart: [...filtered], totalPrice: updatedPrice, totalQty: updatedQty
             }

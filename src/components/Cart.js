@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { CartContext } from '../Global/CartContext'
+import { CartContext } from '../global/CartContext'
 import { Navbar } from './Navbar';
 import { Icon } from 'react-icons-kit'
 import { ic_add } from 'react-icons-kit/md/ic_add'
@@ -7,7 +7,7 @@ import { ic_remove } from 'react-icons-kit/md/ic_remove'
 import { iosTrashOutline } from 'react-icons-kit/ionicons/iosTrashOutline'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
-import { auth } from '../Config/Config'
+import { auth } from '../config/Config'
 
 export const Cart = ({ user }) => {
 
@@ -39,12 +39,12 @@ export const Cart = ({ user }) => {
                         <div className='cart-card' key={cart.ProductID}>
 
                             <div className='cart-img'>
-                                <img src={cart.ProductImg} alt="not found" />
+                                <img src={cart.Image} alt="not found" />
                             </div>
 
-                            <div className='cart-name'>{cart.ProductName}</div>
+                            <div className='cart-name'>{cart.Name}</div>
 
-                            <div className='cart-price-orignal'>Rs {cart.ProductPrice}.00</div>
+                            <div className='cart-price-orignal'>$ {cart.Price}.00</div>
 
                             <div className='inc' onClick={() => dispatch({ type: 'INC', id: cart.ProductID, cart })}>
                                 <Icon icon={ic_add} size={24} />
@@ -57,7 +57,7 @@ export const Cart = ({ user }) => {
                             </div>
 
                             <div className='cart-price'>
-                                Rs {cart.TotalProductPrice}.00
+                                $ {cart.TotalPrice}.00
                             </div>
 
                             <button className='delete-btn' onClick={() => dispatch({ type: 'DELETE', id: cart.ProductID, cart })}>
@@ -72,7 +72,7 @@ export const Cart = ({ user }) => {
                         </div>
                         <div className='cart-summary-price'>
                             <span>Total Price</span>
-                            <span>{totalPrice}</span>
+                            <span>${totalPrice}</span>
                         </div>
                         <div className='cart-summary-price'>
                             <span>Total Qty</span>

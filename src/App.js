@@ -7,7 +7,7 @@ import { Login } from './components/Login';
 import { Women } from './components/Women';
 import { auth, db } from './config/Config';
 import {Products} from './components/Products'
-
+import { Cart } from './components/Cart'
 
 import {ProductShow} from './components/ProductShow'
 import { CartContextProvider } from './global/CartContext'
@@ -46,8 +46,9 @@ export class App extends Component {
   render(){
     return(
 
+      // we can use it in any of the components defined under
 
-      <ProductsContextProvider>
+<ProductsContextProvider>
       <CartContextProvider>
         <div>
           <BrowserRouter>
@@ -61,13 +62,13 @@ export class App extends Component {
               <Route exact path='/Products' component={() => <Products user={this.state.user} />} />
 
               <Route path='/ProductShow' component={ProductShow} />
-
+               <Route path="/cartproducts" component={() => <Cart user={this.state.user} />} />
 
 
 
       </Switch>
   </BrowserRouter>
-</div>
+        </div>
           </CartContextProvider>
       </ProductsContextProvider>
 

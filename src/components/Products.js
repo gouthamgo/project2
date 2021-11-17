@@ -6,17 +6,18 @@ import { Navbar } from './Navbar';
 import { CartContext } from '../global/CartContext'
 
 
-
-
-
-
 export const Products = ({user}) => {
 
   const { products } = useContext(ProductsContext);
+  // console.log(products);
+  // get the data in the form of arrays with produtsid, name, price and img
 
   const { dispatch } = useContext(CartContext);
 
+//   const data = useContext(CartContext);
+// console.log(data);
 
+// if we have some products then render the below through the html given
     return (
         <>
 
