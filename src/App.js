@@ -45,28 +45,32 @@ export class App extends Component {
 
   render(){
     return(
+
+
       <ProductsContextProvider>
       <CartContextProvider>
         <div>
           <BrowserRouter>
             <Switch>
+
               <Route exact path='/' component={() => <Home user={this.state.user} />} />
               <Route exact path='/addproducts' component={AddProducts} />
               <Route path='/signup' component={Signup} />
               <Route path='/login' component={Login} />
               <Route path='/Women' component={Women} />
-              <Route path='/Products' component={Products} />
+              <Route exact path='/Products' component={() => <Products user={this.state.user} />} />
 
               <Route path='/ProductShow' component={ProductShow} />
 
 
 
 
-                </Switch>
-                </BrowserRouter>
-                </div>
-                </CartContextProvider>
-                </ProductsContextProvider>
+      </Switch>
+  </BrowserRouter>
+</div>
+          </CartContextProvider>
+      </ProductsContextProvider>
+
     )
   }
 }

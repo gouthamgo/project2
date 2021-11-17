@@ -1,23 +1,41 @@
 .navbar-brand{
-  position: absolute;
+  /* position: absolute;
    top: 50%;
    transform: translateY(-50%);
-   left:15px;
+   left:15px; */
    font-size: 500px;
 
 }
 
 
 .navbar .navbar-brand{
-  font-size: 30px;
+  font-size: 80px;
 }
 
 span{
   color: red;
 }
 
+/* navbar */
+.navbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.navbox .leftside {
+    width: 80px;
+    height: 40px;
+}
+
+.navbox .leftside a{
+  font-size: 30px;
+}
+
+
 .navbox .rightside {
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 600;
     position: relative;
 }
@@ -29,12 +47,13 @@ span{
 .navbox .rightside span .navlink {
     text-decoration: none;
     color: #000;
+
 }
 
 .navbox .rightside .no-of-products {
     background: #f57224;
     color: #fff;
-    font-size: 30px;
+    font-size: 10px;
     font-weight: 600;
     padding: 2px;
     width: 14px;
@@ -60,6 +79,7 @@ span{
     background-color: #2eca8b;
     margin-left: 10px;
 }
+
 
 /*  main slider */
 .main_slider{

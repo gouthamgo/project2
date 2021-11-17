@@ -18,6 +18,8 @@ import {Footer} from './Footer';
 
 
 
+
+
 export const Home = ({user}) => {
 
 return (
