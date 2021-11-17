@@ -9,7 +9,6 @@ import { auth, db } from './config/Config';
 import {Products} from './components/Products'
 import { Cart } from './components/Cart'
 
-import {ProductShow} from './components/ProductShow'
 import { CartContextProvider } from './global/CartContext'
 
 import { Cashout } from './components/Cashout'
@@ -60,7 +59,6 @@ render(){
               <Route path='/Women' component={Women} />
               <Route exact path='/Products' component={() => <Products user={this.state.user} />} />
 
-              <Route path='/ProductShow' component={ProductShow} />
                <Route path="/cartproducts" component={() => <Cart user={this.state.user} />} />
 
                 <Route path='/cashout' component={() => <Cashout user={this.state.user} />} />
