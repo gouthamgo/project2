@@ -8,6 +8,13 @@ import { Women } from './components/Women';
 import { auth, db } from './config/Config';
 import {Products} from './components/Products'
 import {ProductShow} from './components/ProductShow'
+import { CartContextProvider } from './global/CartContext'
+
+
+
+
+
+
 import { ProductsContextProvider } from './global/ProductsContext'
 import SingleProduct from './components/SingleProduct';
 
@@ -37,6 +44,7 @@ export class App extends Component {
   render(){
     return(
       <ProductsContextProvider>
+      <CartContextProvider>
         <div>
           <BrowserRouter>
             <Switch>
@@ -47,11 +55,15 @@ export class App extends Component {
               <Route path='/Women' component={Women} />
               <Route path='/Products' component={Products} />
               <Route path='/ProductShow' component={ProductShow} />
-              <SingleProduct />
-            </Switch>
-          </BrowserRouter>
-        </div>
-      </ProductsContextProvider>
+
+
+
+
+                </Switch>
+                </BrowserRouter>
+                </div>
+                </CartContextProvider>
+                </ProductsContextProvider>
     )
   }
 }

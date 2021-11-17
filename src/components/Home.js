@@ -4,7 +4,14 @@ import '../css/Home.css'
 import '../images/s1.jpg'
 import {Link} from 'react-router-dom'
 import {New} from './New';
-import {Products} from './Products'
+
+import {Products} from './Products';
+
+import {Flash} from './Flash';
+
+import {Footer} from './Footer';
+
+
 
 
 export const Home = ({user}) => {
@@ -31,6 +38,12 @@ return (
 	</div>
 
   <New/>
+
+
+<Flash/>
+
+
+<Footer/>
 
 </>
 
