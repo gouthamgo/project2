@@ -3,6 +3,7 @@ import { ProductsContext } from '../global/ProductsContext'
 import '../css/Product.css'
 import {Link} from 'react-router-dom'
 import { CartContext } from '../global/CartContext'
+import { Navbar } from './Navbar';
 
 
 export const Products = ({user}) => {
@@ -19,6 +20,9 @@ export const Products = ({user}) => {
 // if we have some products then render the below through the html given
     return (
         <>
+        <div>
+        <Navbar user={user}/>
+        </div>
 
               {products.length !== 0 && <h1>Products</h1>}
 
