@@ -8,13 +8,18 @@ FooterLink,
 Heading,
 } from "./FooterStyles";
 
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+
 export const Footer = () => {
 return (
 	<Box>
 	<h1 style={{ color: "black",
 				textAlign: "center",
 				marginTop: "-50px" }}>
-		Wear- This -- A store to find all your clothing
+		Wear  This -- One stop Clothing store
 	</h1>
 	<Container>
 		<Row>
@@ -41,32 +46,34 @@ return (
 		<Column>
 			<Heading>Social Media</Heading>
 			<FooterLink href="#">
-			<i className="fab fa-facebook-f">
+			<FaFacebook/>
+							
+
 				<span style={{ marginLeft: "10px" }}>
 				Facebook
 				</span>
-			</i>
+
 			</FooterLink>
 			<FooterLink href="#">
-			<i className="fab fa-instagram">
+			<FaInstagram/>
 				<span style={{ marginLeft: "10px" }}>
 				Instagram
 				</span>
-			</i>
+
 			</FooterLink>
 			<FooterLink href="#">
-			<i className="fab fa-twitter">
+		<FaTwitter/>
 				<span style={{ marginLeft: "10px" }}>
 				Twitter
 				</span>
-			</i>
+
 			</FooterLink>
 			<FooterLink href="#">
-			<i className="fab fa-youtube">
+			<FaYoutube/>
 				<span style={{ marginLeft: "10px" }}>
 				Youtube
 				</span>
-			</i>
+
 			</FooterLink>
 		</Column>
 		</Row>
