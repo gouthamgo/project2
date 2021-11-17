@@ -7,6 +7,8 @@ import { Login } from './components/Login';
 import { Women } from './components/Women';
 import { auth, db } from './config/Config';
 import {Products} from './components/Products'
+import { Cart } from './components/Cart'
+
 import {ProductShow} from './components/ProductShow'
 import { CartContextProvider } from './global/CartContext'
 
@@ -42,9 +44,10 @@ export class App extends Component {
   }
 
 render(){
-
   return(
-    <ProductsContextProvider>
+      // we can use it in any of the components defined under
+
+<ProductsContextProvider>
       <CartContextProvider>
         <div>
           <BrowserRouter>
@@ -56,13 +59,18 @@ render(){
               <Route path='/Women' component={Women} />
               <Route exact path='/Products' component={() => <Products user={this.state.user} />} />
 
-              <Route path='/ProductShow/:id' component={ProductShow} />
-            </Switch>
-          </BrowserRouter>
+              <Route path='/ProductShow' component={ProductShow} />
+               <Route path="/cartproducts" component={() => <Cart user={this.state.user} />} />
+
+
+
+      </Switch>
+  </BrowserRouter>
         </div>
-      </CartContextProvider>
-    </ProductsContextProvider>
-    )
+          </CartContextProvider>
+      </ProductsContextProvider>
+
+  )
   }
 }
 

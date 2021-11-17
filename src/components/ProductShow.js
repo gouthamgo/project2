@@ -11,6 +11,12 @@ import { CartContext } from '../global/CartContext'
 
 export const ProductShow = ({user}) => {
 
+
+  // console.log(products);
+  // get the data in the form of arrays with produtsid, name, price and img
+
+  const { dispatch } = useContext(CartContext);
+
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
@@ -44,11 +50,11 @@ export const ProductShow = ({user}) => {
           <h2> Product Details </h2>
           Product Name: { name }
           <br/>
-          Price: { price }
+          Price: ${ price }
           <br/>
-           { image }
+          <img src={image} />
           <br/>
-          <button className='addcart-btn' onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.ProductID, product })}>ADD TO CART</button>
+          <button className='addcart-btn' onClick={() => dispatch({ type: 'ADD_TO_CART', id:productIdUrl})}>ADD TO CART</button>
       </div>
     )
 }

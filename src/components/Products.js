@@ -6,22 +6,20 @@ import { Navbar } from './Navbar';
 import { CartContext } from '../global/CartContext'
 
 
-
-
-
-
 export const Products = ({user}) => {
 
   const { products } = useContext(ProductsContext);
+  // console.log(products);
+  // get the data in the form of arrays with produtsid, name, price and img
 
   const { dispatch } = useContext(CartContext);
 
-          return (
-            <>
+//   const data = useContext(CartContext);
+// console.log(data);
 
-              <div>
-                <Navbar user={user}/>
-              </div>
+// if we have some products then render the below through the html given
+    return (
+        <>
 
               {products.length !== 0 && <h1>Products</h1>}
 
@@ -31,7 +29,7 @@ export const Products = ({user}) => {
                         <div className='product-card' key={product.ProductID}>
                         <div className='product-img'>
 
-                        <Link to= {`ProductShow/:${product.ProductID}`} > 
+                        <Link to= {`ProductShow/:${product.ProductID}`} >
 
                             <img src={product.Image} alt="not found" />
                         </Link>
