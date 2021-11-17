@@ -41,9 +41,10 @@ export class App extends Component {
     })
   }
 
-  render(){
-    return(
-      <ProductsContextProvider>
+render(){
+
+  return(
+    <ProductsContextProvider>
       <CartContextProvider>
         <div>
           <BrowserRouter>
@@ -53,17 +54,14 @@ export class App extends Component {
               <Route path='/signup' component={Signup} />
               <Route path='/login' component={Login} />
               <Route path='/Women' component={Women} />
-              <Route path='/Products' component={Products} />
-              <Route path='/ProductShow' component={ProductShow} />
+              <Route exact path='/Products' component={() => <Products user={this.state.user} />} />
 
-
-
-
-                </Switch>
-                </BrowserRouter>
-                </div>
-                </CartContextProvider>
-                </ProductsContextProvider>
+              <Route path='/ProductShow/:id' component={ProductShow} />
+            </Switch>
+          </BrowserRouter>
+        </div>
+      </CartContextProvider>
+    </ProductsContextProvider>
     )
   }
 }

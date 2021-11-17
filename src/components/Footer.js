@@ -1,61 +1,77 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
-import '../css/Footer.css'
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaBtc } from "react-icons/fa";
-import { FaCcApplePay } from "react-icons/fa";
-
+import React from "react";
+import {
+Box,
+Container,
+Row,
+Column,
+FooterLink,
+Heading,
+} from "./FooterStyles";
 
 export const Footer = () => {
-
-
 return (
-  <>
+	<Box>
+	<h1 style={{ color: "black",
+				textAlign: "center",
+				marginTop: "-50px" }}>
+		Wear- This -- A store to find all your clothing
+	</h1>
+	<Container>
+		<Row>
+		<Column>
+			<Heading>About Us</Heading>
+			<FooterLink href="#">Aim</FooterLink>
+			<FooterLink href="#">Vision</FooterLink>
+			<FooterLink href="#">Carrers</FooterLink>
+		</Column>
+		<Column>
+			<Heading>Services</Heading>
+			<FooterLink href="#">Women</FooterLink>
+			<FooterLink href="#">Men</FooterLink>
+			<FooterLink href="#">Acessories</FooterLink>
 
-  <footer class="footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="footer_nav_container d-flex flex-sm-row flex-column
-						align-items-center justify-content-lg-start justify-content-center text-center">
-							<ul class="footer_nav">
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">FAQs</a></li>
-								<li><a href="#">Contact Us</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
+		</Column>
+		<Column>
+			<Heading>Contact Us</Heading>
+			<FooterLink href="#">USA</FooterLink>
+			<FooterLink href="#">Australia</FooterLink>
+			<FooterLink href="#">Europe</FooterLink>
 
-              <FaFacebook/>
-								<FaInstagram/>
-								<FaTwitter/>
-                <FaBtc/>
-                <FaCcApplePay/>
-
-
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="footer_nav-container">
-							<div class="cr">©2021 All Right Reserved.Made by <i class="fa fa-heart-o" aria-hidden="true"></i> by<a href="#">
-								SEIR48
-							</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-
-
-
-
-  </>
-    )
-}
+		</Column>
+		<Column>
+			<Heading>Social Media</Heading>
+			<FooterLink href="#">
+			<i className="fab fa-facebook-f">
+				<span style={{ marginLeft: "10px" }}>
+				Facebook
+				</span>
+			</i>
+			</FooterLink>
+			<FooterLink href="#">
+			<i className="fab fa-instagram">
+				<span style={{ marginLeft: "10px" }}>
+				Instagram
+				</span>
+			</i>
+			</FooterLink>
+			<FooterLink href="#">
+			<i className="fab fa-twitter">
+				<span style={{ marginLeft: "10px" }}>
+				Twitter
+				</span>
+			</i>
+			</FooterLink>
+			<FooterLink href="#">
+			<i className="fab fa-youtube">
+				<span style={{ marginLeft: "10px" }}>
+				Youtube
+				</span>
+			</i>
+			</FooterLink>
+		</Column>
+		</Row>
+	</Container>
+	</Box>
+);
+};
+export default Footer;
