@@ -12,6 +12,8 @@ import { Cart } from './components/Cart'
 import {ProductShow} from './components/ProductShow'
 import { CartContextProvider } from './global/CartContext'
 
+import { Cashout } from './components/Cashout'
+
 
 
 
@@ -62,7 +64,7 @@ render(){
               <Route path='/ProductShow' component={ProductShow} />
                <Route path="/cartproducts" component={() => <Cart user={this.state.user} />} />
 
-
+                <Route path='/cashout' component={() => <Cashout user={this.state.user} />} />
 
       </Switch>
   </BrowserRouter>
