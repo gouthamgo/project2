@@ -60,7 +60,7 @@ export const ProductShow = ({user}) => {
       <br />
       <div class='container-5'>
 
-          <div class='name'>
+          <div class='name2'>
           <br/>
           Product Name: { name }
           <br />
