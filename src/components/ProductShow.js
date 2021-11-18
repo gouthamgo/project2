@@ -7,6 +7,7 @@ import { useLocation } from "react-router"
 import {db} from '../config/Config';
 import { CartContext } from '../global/CartContext'
 import 'react-toastify/dist/ReactToastify.css';
+import '../css/ProductShow.css'
 
 
 
@@ -53,16 +54,30 @@ export const ProductShow = ({user}) => {
 
 
     return (
-      <div>
-          <Navbar user={user}/>
-          <h2> Product Details </h2>
+      <>
+      <Navbar user={user}/>
+      <h2> Product Details </h2>
+      <br />
+      <div class='container-5'>
+
+          <div class='name'>
+          <br/>
           Product Name: { name }
+          <br />
+          <br />
+          </div>
+          <div>
+          <img src={image} />
+          </div>
+
+          <div class='info'>
           <br/>
           Price: ${ price }
           <br/>
-          <img src={image} />
-          <br/>
-          <button className='addcart-btn' onClick={() => dispatch({ type: 'ADD_TO_CART', id:productIdUrl, product:data})}>ADD TO CART</button>
+          <h6> Ratings: ⭐️⭐️⭐️⭐️ </h6>
+          </div>
+          <button className='addcart-btn1' onClick={() => dispatch({ type: 'ADD_TO_CART', id:productIdUrl, product:data})}> ADD TO CART</button>
       </div>
+      </>
     )
 }
