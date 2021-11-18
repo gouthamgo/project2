@@ -4,19 +4,16 @@ import '../css/Home.css'
 import '../images/s1.jpg'
 
 import {New} from './New';
-
+// importing new from new component
 
 import {Flash} from './Flash';
+// importing flash from flash component
 
 import {Footer} from './Footer';
 
 import { Link } from 'react-router-dom'
 
-
-
-
-
-
+// use the home functional component to render the reuired out 
 export const Home = ({user}) => {
 
   return (
@@ -42,13 +39,9 @@ export const Home = ({user}) => {
 
     </div>
 
-
-
     <New/>
 
-
     <Flash/>
-
 
     <Footer/>
 
