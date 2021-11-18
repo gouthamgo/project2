@@ -69,6 +69,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 12. npm i react-infinite-scroll-component
 
 
+
+![](Screen Shot 2021-11-18 at 5.21.49 pm.png)
+![](Screen Shot 2021-11-19 at 9.52.16 am.png)
+![](Screen Shot 2021-11-19 at 9.52.40 am.png)
+
+
 # Backend
 
 -Then make a Config file to store the API key of the firebase to use it as a backend.
