@@ -70,9 +70,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 
 
-![](Screen Shot 2021-11-18 at 5.21.49 pm.png)
-![](Screen Shot 2021-11-19 at 9.52.16 am.png)
-![](Screen Shot 2021-11-19 at 9.52.40 am.png)
+![](3.png)
+![](1.png)
+![](2.png)
 
 
 # Backend
