@@ -39,3 +39,162 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+
+
+# Step 1: 
+
+- Installing packages needed
+
+1. npm install bootstrap
+
+2. npm install firebase
+
+3. npm install get-google-fonts
+
+4. npm install react-icons-kit
+
+5. npm i react-router-dom@5.2.0
+
+6. npm install infinite-react-carousel –save
+
+7. npm install @material-ui/core @material-ui/icons
+
+8. npm install react-icons –save
+
+9. npm install --save @fortawesome/fontawesome-free
+
+10. npm install react-toastify
+
+11. npm install --save styled-components
+12. npm i react-infinite-scroll-component
+
+
+# Backend
+
+-Then make a Config file to store the API key of the firebase to use it as a backend.
+- Configure and import the firebase – authorisation, fire-store and storage to load the respective images and store the database items.
+
+# Step 2:- 
+## Navigation setup 
+
+-	Setup the routes to the home page and signup and login 
+-	Get the icons through various packages 
+-	# Navbar
+-	-> Put logo and signup and login 
+-	-> import fonts and setup css files 
+-	->import icons and load them
+
+ 
+# Step 3:-
+Add products to the database
+
+# Step 4:- # Authentication
+
+-- setup the folder structure and create a config file to link the firebase through api 
+
+
+  ## Firebase Authentication
+
+-> link the components to the navbar
+-> then route them with react router
+
+-> make a html form using bootstrap 
+
+-> use react usestate hook for defining states 
+-> on change handlers pull the target elements values
+-> console the form and values to check the working condition
+
+->import auth and db from config file
+-> auth ---create users
+Db- store their information in database
+	Use the guide below 
+https://firebase.google.com/docs/auth/web/password-auth
+
+-> createUserWithEmailAndPassword -> is firebase asyn function to create a user
+
+// Asyn functions take sometime to complete. Asyn functions returns a promise which can be resolved or rejected 
+// we use . then when we want something to happen if a promise is resolved and .catch if the promise is rejected.
+
+// createUserWithEmailAndPassword-> returns a response and we can use that response in a callback function
+
+// once the user is stored successfully then empty the states and move to the login component
+
+https://firebase.google.com/docs/reference/node/firebase.database.DataSnapshot
+
+
+
+
+
+# Step 5:- 
+
+## Show the products
+
+-import the database through config file and export to the products show page 
+
+-Use create-Context and make js files in global folder to make it available to all the components
+
+
+
+->React Context hook to use
+
+It accepts a context object and returns the current context value for that context. 
+
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+There are four steps to using React context:
+1.	Create context using the createContext method.
+2.	Take your created context and wrap the context provider around your component tree.
+3.	Put any value you like on your context provider using the value prop.
+4.	Read that value within any component by using the context consumer.
+
+->Then in the products page 
+//simple conditional and map function to show all the available products 
+If we got products through map  to map each function and if we haven’t got any then through it as 0 and show some text.
+
+->retrive the data from the firebase collection and show it on the webpage
+
+
+# Step 6: Adding products into the cart 
+// adding the products to the cart and display the total number of products in navbar
+
+--- Throw an alert if the product is already there
+
+for manipulating state, we use separate reducer files
+
+A reducer is a function that determines changes to an application’s state. It uses the action it receives to determine this change. We have tools, like Redux, that help manage an application’s state changes in a single store so that they behave consistently.
+
+useReducer
+const [state, dispatch] = useReducer(reducer, initialArg, init);
+
+An alternative to useState. Accepts a reducer of type (state, action) => newState, and returns the current state paired with a dispatch method. (If you’re familiar with Redux, you already know how this works.)
+
+useReducer is usually preferable to useState when you have complex state logic that involves multiple sub-values or when the next state depends on the previous one. useReducer also lets you optimize performance for components that trigger deep updates because you can pass dispatch down instead of callbacks.
+
+
+## Manipulation of state 
+1.	Delete the cart items
+2.	Increase and decrease the sizes
+
+-> we use dispatch to pass an action to CartReducer to manipulate the state
+
+On click at cart- dispatch function takes a type of the property; we can name it with any value. In addition, the product id of the product is passed 
+
+
+
+// cart reducer
+
+- destructure the shoppingCart, totalPrice and totalQty
+   -from state and then declare some variables
+
+We use switch statement which has a case add to cart
+
+In there-> we have a statement to check if the product is already there 
+, if yes then return whatever the state we have 
+If not then return the state with the new product
+
+dispatch() is the method used to dispatch actions and trigger state changes to the store. 
+
+
+
+
+
