@@ -36,7 +36,7 @@ export const Cart = ({ user }) => {
                         </>
                     }
                     {shoppingCart && shoppingCart.map(cart => (
-                        <div className='cart-card' key={cart.ProductID}>
+                        <div className='cart-card' key={cart.ProductID } >
 
                             <div className='cart-img'>
                                 <img src={cart.Image} alt="not found" />

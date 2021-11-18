@@ -9,10 +9,10 @@ import { auth, db } from './config/Config';
 import {Products} from './components/Products'
 import { Cart } from './components/Cart'
 
-import {ProductShow} from './components/ProductShow'
 import { CartContextProvider } from './global/CartContext'
 
 import { Cashout } from './components/Cashout'
+import { ProductShow } from './components/ProductShow'
 
 
 
@@ -20,7 +20,6 @@ import { Cashout } from './components/Cashout'
 
 
 import { ProductsContextProvider } from './global/ProductsContext'
-import SingleProduct from './components/SingleProduct';
 
 export class App extends Component {
 
@@ -61,10 +60,12 @@ render(){
               <Route path='/Women' component={Women} />
               <Route exact path='/Products' component={() => <Products user={this.state.user} />} />
 
-              <Route path='/ProductShow' component={ProductShow} />
                <Route path="/cartproducts" component={() => <Cart user={this.state.user} />} />
+               <Route path='/ProductShow/cartproducts' component={() => <Cart user={this.state.user} />} />
+               <Route path="/ProductShow" component={() => <ProductShow user={this.state.user} />} />
 
                 <Route path='/cashout' component={() => <Cashout user={this.state.user} />} />
+
 
       </Switch>
   </BrowserRouter>

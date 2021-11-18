@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router"
 import {db} from '../config/Config';
 import { CartContext } from '../global/CartContext'
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -24,6 +25,7 @@ export const ProductShow = ({user}) => {
 
     const { products } = useContext(ProductsContext);
     const productIdUrl = useLocation().pathname.split("/").pop();
+
 
     const productId = productIdUrl.substring(1);
     // console.log(productId);
@@ -47,6 +49,8 @@ export const ProductShow = ({user}) => {
             }).catch((error) => {
               // console.log("Error getting document:", error);
         });
+
+
 
     return (
       <div>
