@@ -204,3 +204,6 @@ dispatch() is the method used to dispatch actions and trigger state changes to t
 
 
 
+# Note:
+
+Big Thanks to Pat,Rowena and Joel for all their support
