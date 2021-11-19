@@ -226,8 +226,41 @@ useReducer is usually preferable to useState when you have complex state logic t
 -> we use dispatch to pass an action to CartReducer to manipulate the state
 
 On click at cart- dispatch function takes a type of the property; we can name it with any value. In addition, the product id of the product is passed 
+```
+import React, { createContext, useReducer } from 'react'
+import { CartReducer } from './CartReducer'
+// import the reducer
+
+export const CartContext = createContext();
+
+export const CartContextProvider = (props) => {
+
+    const [cart, dispatch] = useReducer(CartReducer, { shoppingCart: [], totalPrice: 0, totalQty: 0 })
+//will unpack it into the props on your component,  you "never" use {... props} inside your render() function,
+// only when you pass the props down to another component. Use your unpacked props
+// as normal this.props.x.
+    return (
+        <CartContext.Provider value={{ ...cart, dispatch }}>
+            {props.children}
+        </CartContext.Provider>
+    )
+}
 
 
+```
+```
+The useReducer(reducer, initialState) hook accept 2 arguments: the reducer function and the initial state. The hook then returns an array of 2 items: the current state and the dispatch function.
+
+-- The initial state is the value the state is initialized with.
+-- An action object is an object that describes how to update the state.
+
+--The dispatch is a special function that dispatches an action object.
+
+const [state, dispatch] = useReducer(reducer, initialState);
+
+
+```
+![](11.png)
 
 // cart reducer
 
