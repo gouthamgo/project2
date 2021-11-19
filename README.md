@@ -263,13 +263,16 @@ const [state, dispatch] = useReducer(reducer, initialState);
 ![](11.png)
 
 ```
-As a result of an event handler or after completing a fetch request, you call the dispatch function with the action object.
+As a result of an event handler or after completing a fetch request, 
+you call the dispatch function with the action object.
 
 Then React redirects the action object and the current state value to the reducer function.
 
 The reducer function uses the action object and performs a state update, returning the new state.
 
-React then checks whether the new state differs from the previous one. If the state has been updated, React re-renders the component and useReducer() returns the new state value: [newState, ...] = useReducer(...).
+React then checks whether the new state differs from the previous one.
+If the state has been updated,
+React re-renders the component and useReducer() returns the new state value: [newState, ...] = useReducer(...).
 ```
 
 // cart reducer
