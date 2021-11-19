@@ -284,6 +284,8 @@ In there-> we have a statement to check if the product is already there
 If not then return the state with the new product
 
 dispatch() is the method used to dispatch actions and trigger state changes to the store. 
+# Step 7:- 
+We move on to make a component to show each product indivdually
 
 
 
@@ -291,4 +293,4 @@ dispatch() is the method used to dispatch actions and trigger state changes to t
 
 # Note:
 
-Big Thanks to Pat,Rowena and Joel for all their support
+## Big Thanks to Pat,Rowena and Joel for all their support
