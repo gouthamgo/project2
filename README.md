@@ -67,7 +67,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 10. npm install react-toastify
 
 11. npm install --save styled-components
-12. npm i react-infinite-scroll-component
+
 
 
 
@@ -90,7 +90,26 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 -	-> Put logo and signup and login 
 -	-> import fonts and setup css files 
 -	->import icons and load them
-
+```
+return (
+        <div className='navbox'>
+            <div className='leftside'>
+            <a class="navbar-brand" href="/">Wear<span> This</span></a>
+            </div>
+            {!user && <div className='rightside'>
+                <span><Link to="signup" className='navlink'>SIGN UP</Link></span>
+                <span><Link to="login" className='navlink'>LOGIN</Link></span>
+            </div>}
+            {user && <div className='rightside'>
+                <span><Link to="/" className='navlink'>{user}</Link></span>
+                <span><Link to="cartproducts" className='navlink'><Icon icon={cart} /></Link></span>
+                <span className='no-of-products'>{totalQty}</span>
+                <span><button className='logout-btn' onClick={handleLogout}>Logout</button></span>
+            </div>}
+        </div>
+    )
+}
+```
  
 # Step 3:-
 Add products to the database
@@ -113,7 +132,8 @@ Add products to the database
 
 ->import auth and db from config file
 -> auth ---create users
-Db- store their information in database
+
+## Db- store their information in database
 	Use the guide below 
 https://firebase.google.com/docs/auth/web/password-auth
 
@@ -146,7 +166,7 @@ https://firebase.google.com/docs/reference/node/firebase.database.DataSnapshot
 
 It accepts a context object and returns the current context value for that context. 
 
-Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+-- Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 
 There are four steps to using React context:
 1.	Create context using the createContext method.
