@@ -138,6 +138,27 @@ Add products to the database
 https://firebase.google.com/docs/auth/web/password-auth
 
 -> createUserWithEmailAndPassword -> is firebase asyn function to create a user
+```
+const doSignup = (e) => {
+    e.preventDefault();
+    auth.createUserWithEmailAndPassword(email,password).then((cred)=>{
+        db.collection('Users').doc(cred.user.uid).set({
+          Name: name,
+          Email: email,
+          Password: password,
+          ConfirmPassword: confirmpassword
+        }).then(()=>{
+          setName('');
+          setEmail('');
+          setPassword('');
+          setConfirmPassword('');
+          setError('');
+          props.history.push('/login');
+        }).catch(err=>setError(err.message));
+    }).catch(err=>setError(err.message));
+  }
+
+```
 
 // Asyn functions take sometime to complete. Asyn functions returns a promise which can be resolved or rejected 
 // we use . then when we want something to happen if a promise is resolved and .catch if the promise is rejected.
