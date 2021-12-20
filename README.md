@@ -1,6 +1,10 @@
 ## Live site : https://wear-it.netlify.app/
 
 
+
+https://user-images.githubusercontent.com/24316133/146696199-9a944dea-0041-4eff-906a-06fd28269e6c.mp4
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
