@@ -1,6 +1,6 @@
 ## Live site : https://wear-it.netlify.app/
 
-
+Ecommerce Website with full user authentication functionality and other ecommerce features to purchase different features.
 
 https://user-images.githubusercontent.com/24316133/146696199-9a944dea-0041-4eff-906a-06fd28269e6c.mp4
 
